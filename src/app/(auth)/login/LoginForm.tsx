@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 
@@ -7,11 +8,13 @@ const LoginForm = () => {
     const [remember, setRemember] = useState(false)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const router = useRouter()
     const handleSubmit = (e: React.SubmitEvent) => {
         e.preventDefault();
 
         if (email === "") return toast.error("please enter your email")
         if (password === "") return toast.error("please enter your password")
+        router.replace('/')
     }
 
     return (
