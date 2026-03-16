@@ -1,8 +1,9 @@
+import AdminPostForm from "@/src/components/admin/AdminPostForm"
 
 const AdminPage = () => {
   return (
     <div>
-      AdminPage
+      <AdminPostForm />
     </div>
   )
 }

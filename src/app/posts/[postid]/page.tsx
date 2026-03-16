@@ -1,3 +1,5 @@
+import AddComment from "@/src/components/comments/AddComment";
+import CommentItem from "@/src/components/comments/CommentItem";
 import { TPost } from "@/src/utils/types";
 
 
@@ -7,7 +9,7 @@ const PostPage = async ({ params }: { params: { postid: string }}) => {
     const res = await fetch(`https://dummyjson.com/posts/${postid}`, { cache: "no-cache" });
     const post: TPost = await res.json();
     return (
-        <main className="max-w-3xl mx-auto px-6 py-12">
+        <main className="w-full md:w-2/3 mx-auto px-6 py-12">
 
             {/* Title */}
             <header className="mb-8">
@@ -48,7 +50,8 @@ const PostPage = async ({ params }: { params: { postid: string }}) => {
                     ))}
                 </div>
             </section>
-
+            <CommentItem comment={'lorem jkcjnfk bkk dkjvkbv '} />
+            <AddComment />
         </main>
     )
 }
